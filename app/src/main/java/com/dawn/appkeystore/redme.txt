@@ -1,0 +1,15 @@
+KeyStore
+
+一.简介
+1.KeyStore 是Android提供的可以长期存储和检索加密密钥的机制，Keystore不只是可以保存密码，还可以保存敏感数据，而且它的实现方式使得黑客或者恶意程序很难破信息。
+2.Android的Keystore系统可以把密钥保持在一个难以从设备中取出数据的容器中。当密钥保存到Keystore之后，可以在不取出密钥的状态下进行私密操作。
+3.它提供了限制何时以何种方式使用密钥的方法，比如使用密钥时需要用户认证或限制密钥只能在加密模式下使用。
+4.依托于硬件的 KeyChain 存储，可以做到 private key 一旦存入就无法取出.
+
+二.场景
+1.例子：Android的”AndroidKeyStore” 是 KeyStore 的一个子集，存进 AndroidKeyStore 的 key 将受到签名保护，并且这些 key 是存在系统里的，
+    而不是在 App 的 data 目录下，每个 App 自己创建的 key，别的应用是访问不到的。因此app升级app的差分包合并都需要验证签名
+
+三.重要工具
+
+.使用
